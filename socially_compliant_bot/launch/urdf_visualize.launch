@@ -1,0 +1,24 @@
+<launch>
+
+<!-- To run this launch file, type this
+$roslaunch socially_compliant_bot urdf_visualize.launch model:='$(find socially_compliant_bot)/urdf/summit_xl.urdf' -->
+​
+  <arg name="model" default=""/>
+  <param name="robot_description" command="cat $(arg model)" />
+​
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="TRUE"/>
+  </node>
+​
+  
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+​
+  <!-- Show in Rviz   -->
+  <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find socially_compliant_bot)/rviz_config/urdf.rviz"/>-->
+  <node name="rviz" pkg="rviz" type="rviz" args=""/>
+
+
+​
+</launch>

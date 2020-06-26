@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"summit_base_footprint" [label="summit_base_footprint"];
+"summit_base_link" [label="summit_base_link"];
+"summit_back_left_wheel_link" [label="summit_back_left_wheel_link"];
+"summit_back_right_wheel_link" [label="summit_back_right_wheel_link"];
+"summit_front_left_wheel_link" [label="summit_front_left_wheel_link"];
+"summit_front_right_wheel_link" [label="summit_front_right_wheel_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"summit_base_footprint" -> "summit_base_footprint_joint" [label="xyz: 0 0 0.127 \nrpy: 0 -0 0"]
+"summit_base_footprint_joint" -> "summit_base_link"
+"summit_base_link" -> "summit_back_left_wheel_joint" [label="xyz: -0.2225 0.2045 0 \nrpy: 0 -0 0"]
+"summit_back_left_wheel_joint" -> "summit_back_left_wheel_link"
+"summit_base_link" -> "summit_back_right_wheel_joint" [label="xyz: -0.2225 -0.2045 0 \nrpy: 0 -0 0"]
+"summit_back_right_wheel_joint" -> "summit_back_right_wheel_link"
+"summit_base_link" -> "summit_front_left_wheel_joint" [label="xyz: 0.2225 0.2045 0 \nrpy: 0 -0 0"]
+"summit_front_left_wheel_joint" -> "summit_front_left_wheel_link"
+"summit_base_link" -> "summit_front_right_wheel_joint" [label="xyz: 0.2225 -0.2045 0 \nrpy: 0 -0 0"]
+"summit_front_right_wheel_joint" -> "summit_front_right_wheel_link"
+}
