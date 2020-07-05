@@ -1,0 +1,408 @@
+<!-- Usage notes are located in this file, look for "Usage"-->
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <gui>
+      <camera name="user_camera">
+        <pose>0 -18 8.0 0 0.523 1.5707</pose>
+      </camera>
+    </gui>
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>0 0.5 -0.9</direction>
+    </light>
+
+    <light name="point_light" type="point">
+      <pose>0 -0.377195 6.59868 0 -0 0</pose>
+      <diffuse>0.784314 0.784314 0.784314 1</diffuse>
+      <specular>0.0980392 0.0980392 0.0980392 1</specular>
+      <attenuation>
+        <range>50</range>
+        <constant>0.8</constant>
+        <linear>0</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://cafe</uri>
+    </include>
+
+    <include>
+      <name>table1</name>
+      <pose>0.5 -1.6 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table2</name>
+      <pose>2.4 -5.5 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table3</name>
+      <pose>-1.5 -5.5 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table4</name>
+      <pose>2.4 -9 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>table5</name>
+      <pose>-1.5 -9 0.2 0 0 0</pose>
+      <uri>model://cafe_table</uri>
+    </include>
+
+    <include>
+      <name>box</name>
+      <pose>3.18 -6.57 0.2 0 0 0</pose>
+      <uri>model://cardboard_box</uri>
+    </include>
+
+    <include>
+      <name>box1</name>
+      <pose>-4.1 -4.5 0.2 0 0 0</pose>
+      <uri>model://cardboard_box</uri>
+    </include>
+
+    <!-- <actor name="actor1">
+      <pose>0 1 1.25 0 0 0</pose>
+      <skin>
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <plugin name="actor1_plugin" filename="libActorPlugin.so">
+        <target>0 -5 1.2138</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor> -->
+    
+    <actor name="actor2">
+      <pose>-2 -4 1.25 0 0 0</pose>
+      <skin>
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="actor2_plugin" filename="libActorPlugin.so">
+        <target>3 2 1.24</target>
+        <target_weight>1.15</target_weight>
+        <obstacle_weight>1.8</obstacle_weight>
+        <animation_factor>5.1</animation_factor>
+        <ignore_obstacles>
+          <model>cafe</model>
+          <model>ground_plane</model>
+        </ignore_obstacles>
+      </plugin>
+    </actor>
+
+
+    <actor name="actor3">
+      <skin>
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+            <loop>true</loop>
+            <delay_start>3</delay_start>
+            <auto_start>true</auto_start>
+          <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-3.5 -12 0.2 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>2</time>
+            <pose>-3.5 -10 0.2 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>4</time>
+            <pose>-3.5 -7 0.2 0 0 1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>6</time>
+            <pose>-2.5 -6.5 0.2 0 0 0.78</pose>
+          </waypoint>
+          <waypoint>
+            <time>8</time>
+            <pose>-2.5 -6.5 0.2 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>12</time>
+            <pose>-2.0 -6.5 0.2 0 0 0</pose>
+          </waypoint>
+         <waypoint>
+            <time>14</time>
+            <pose>-2.0 -6.5  0.2 0 0 1.57</pose>
+          </waypoint>
+         <waypoint>
+            <time>16</time>
+            <pose>-2.0 -6.5  0.2 0 0 -1.57</pose>
+          </waypoint>
+         <waypoint>
+            <time>18</time>
+           <pose>-2.5 -7.0 0.2 0 0 -2.35</pose>
+          </waypoint>
+         <waypoint>
+            <time>19</time>
+           <pose>-3.5 -7.0 0.2 0 0 -2.75</pose>
+          </waypoint>
+         <waypoint>
+            <time>20</time>
+            <pose>-3.5 -7.0 0.2 0 0 -1.57</pose>
+          </waypoint>
+         <waypoint>
+            <time>22</time>
+            <pose>-3.5 -10 0.2 0 0 -1.57</pose>
+          </waypoint>
+         <waypoint>
+            <time>24</time>
+            <pose>-3.5 -12 0.2 0 0 -1.57</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+      </actor>
+
+     <actor name="actor4">
+    <pose>1.0 0 0.2 0 0 0</pose>
+      <skin>
+        <filename>talk_a.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="talk_a">
+        <filename>talk_a.dae</filename>
+      </animation> 
+      <script>
+        <trajectory id="0" type="talk_a">
+            <waypoint>
+              <time>100</time>
+             <pose>1.0 0 0.2 0 0 0</pose>
+            </waypoint>
+
+            <waypoint>
+              <time>100</time>
+             <pose>1.0 0 0.2 0 0 0</pose>
+            </waypoint>
+        </trajectory>
+      </script>
+  </actor>
+
+     <actor name="actor5">
+     <pose>1.2 0.2 0.2 0 0 0</pose>
+      <skin>
+        <filename>talk_b.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="talk_b">
+        <filename>talk_b.dae</filename>
+      </animation>
+      <script>
+        <trajectory id="0" type="talk_b">
+            <waypoint>
+              <time>100</time>
+             <pose>1.2 0.2 0.2 0 0 0</pose>
+            </waypoint>
+
+            <waypoint>
+              <time>100</time>
+             <pose>1.2 0.2 0.2 0 0 0</pose>
+            </waypoint>
+        </trajectory>
+      </script>
+  </actor>
+
+
+ <actor name="actor6">
+    <pose>0 0 1 0 0 0</pose>
+      <static>true</static>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+
+      <!-- resource files -->
+      <animation name="sit_down">
+        <filename>sit_down.dae</filename>
+      </animation>
+
+      <animation name="sitting">
+        <filename>sitting.dae</filename>
+      </animation>
+
+      <animation name="stand_up">
+        <filename>stand_up.dae</filename>
+      </animation>
+
+      <animation name="stand">
+        <filename>stand.dae</filename>
+      </animation>
+
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <animation name="running">
+        <filename>run.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <animation name="moonwalking">
+        <filename>moonwalk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+     <!-- stand at origin for 10 seconds -->
+     <!--sit down-->
+     <!--sit-->
+     <!--stand up-->
+     <!--walk 5 meters forward in 10 seconds-->
+     <!--run 5 meters forward in 5 seconds-->
+     <!--moonwalk bak to origin in 20 seconds-->
+      <script>
+        <trajectory id="0" type="stand">
+          <waypoint>
+              <time>0</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+          <waypoint>
+              <time>10</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="1" type="sit_down">
+          <waypoint>
+              <time>5</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="2" type="sitting" >
+          <waypoint>
+             <time>5</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="3" type="stand_up" >
+          <waypoint>
+              <time>6.5</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="4" type="walking">
+          <waypoint>
+              <time>0.0</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+          <waypoint>
+              <time>10.0</time>
+              <pose>1 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="5" type="running">
+          <waypoint>
+              <time>0.0</time>
+              <pose>1 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+          <waypoint>
+              <time>10.0</time>
+              <pose>3.5 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="6" type="moonwalking">
+          <waypoint>
+              <time>0.0</time>
+              <pose>3.5 -4.58 0.2 0 0 3.14159 </pose>
+          </waypoint>
+          <waypoint>
+              <time>20.0</time>
+              <pose>-4 -4.58 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+      </script>
+    </actor>
+
+  <actor name="actor7">
+    <pose>3 -7 1.25 0 0 0</pose>
+      <static>true</static>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+
+      <!-- resource files -->
+      <animation name="sit_down">
+        <filename>sit_down.dae</filename>
+      </animation>
+
+      <animation name="sitting">
+        <filename>sitting.dae</filename>
+      </animation>
+
+     <script>
+        <loop>false</loop>
+        <delay_start>2</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="sit_down">
+          <waypoint>
+              <time>5</time>
+              <pose>3 -7 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+
+        <trajectory id="1" type="sitting">
+          <waypoint>
+              <time>3</time>
+              <pose>3 -7 0.2 0 0 0 </pose>
+          </waypoint>
+        </trajectory>
+    </script>
+    </actor>
+
+  </world>
+</sdf>

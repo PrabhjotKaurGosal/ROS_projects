@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+
+<!-- launch Gazebo world - Cafe_actors.world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(find hydra_one_description)/worlds/Cafe_actors.world"/> 
+  </include>
+
+<!-- launch Gazebo world - ISCAS_museum_actors.world -->
+<!--
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(find socially_compliant_bot)/worlds/ISCAS_museum_actors.world"/> 
+  </include>
+-->
+
+<!-- spawn a robot in the world 
+    <arg name="x" default="-2.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.0" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find socially_compliant_bot)/urdf/summit_xl.urdf -urdf -x $(arg x) -y $(arg y) -z $(arg z) -model summit_xl" /> -->
+
+ <!-- <include file="$(find socially_compliant_bot)/launch/spawn_summit_xl.launch"/>
+  <include file="$(find socially_compliant_bot)/launch/summit_xl_control.launch"/> 
+ <include file="$(find socially_compliant_bot)/launch/trial.launch"/> -->
+
+ <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" textfile ="$(find hydra_one_description)/urdf/hydra_one.urdf" />
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model summit_xl -param robot_description"/>
+</launch>
