@@ -4,7 +4,7 @@
 
 <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="/hydra_one" args="hydra_one_front_right_wheel_joint_position_controller hydra_one_front_left_wheel_joint_position_controller hydra_one_back_left_wheel_joint_position_controller hydra_one_back_right_wheel_joint_position_controller joint_state_controller"/>
+    output="screen" ns="/hydra_one" args="hydra_one_front_right_wheel_joint_velocity_controller hydra_one_front_left_wheel_joint_velocity_controller hydra_one_back_left_wheel_joint_velocity_controller hydra_one_back_right_wheel_joint_velocity_controller joint_state_controller"/>
 
  <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"

@@ -26,9 +26,21 @@
  <include file="$(find socially_compliant_bot)/launch/trial.launch"/> -->
 
  <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" textfile ="$(find hydra_one_description)/urdf/hydra_one.urdf" />
+  <param name="robot_description" textfile ="$(find hydra_one_description)/urdf/hydra_one_WithSensors.urdf" />
 
-  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+<!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model summit_xl -param robot_description"/>
+
+ <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <!-- <remap from="/joint_states" to="/hydra_one/joint_states" />  -->
+  </node>
+
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+ <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" />
+
+
 </launch>
