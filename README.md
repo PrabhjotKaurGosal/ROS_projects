@@ -1,3 +1,3 @@
-# Package 1: socially_compliant_bot
+# Package 1: hydra_one_description
 
 # References
