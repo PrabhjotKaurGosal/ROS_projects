@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+
+<!-- launch Gazebo world - Cafe_actors.world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(find hydra_one_description)/worlds/Cafe_actors.world"/> 
+  </include>
+
+<!-- launch Gazebo world - ISCAS_museum_actors.world -->
+<!--
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(find hydra_one_description)/worlds/ISCAS_museum_actors.world"/> 
+  </include>-->
+
+ <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" textfile ="$(find hydra_one_description)/urdf/hydra_one_WithSensors_planar_move_plugin.urdf" />
+
+<!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model hydra_one -param robot_description"/>
+
+ <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <!-- <remap from="/joint_states" to="/hydra_one/joint_states" />  -->
+  </node>
+
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+ <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" />
+
+
+</launch>
