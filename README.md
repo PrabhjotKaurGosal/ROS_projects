@@ -12,4 +12,13 @@
 
 # Package 2: hydra_one_navigation
 
+## Package description
+## How to run this package?
+##### $ source /opt/ros/melodic/setup.bash
+##### $ cd ~/catkin_ws/
+##### $ catkin_make
+##### $ source devel/setup.bash
+##### $ cd src/hydra_one_navigation/launch
+##### $ roslaunch gmapping_launch.launch
+
 # References
