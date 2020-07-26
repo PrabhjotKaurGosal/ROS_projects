@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="hydra_one_navigation" type="get_pose_service.py" name="service_server" output="screen">       
+    </node>
+</launch>
