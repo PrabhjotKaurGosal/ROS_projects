@@ -4,7 +4,7 @@
 <!-- launch Gazebo world - Cafe_actors.world-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="verbose" value="true"/>
-    <arg name="world_name" value="$(find hydra_one_description)/worlds/Cafe_actors.world"/> 
+    <arg name="world_name" value="$(find hydra_one_description)/worlds/ISCAS_museum_actors.world"/> 
   </include>
 
 <!-- launch Gazebo world - ISCAS_museum_actors.world -->
