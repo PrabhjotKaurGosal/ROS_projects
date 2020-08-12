@@ -1,3 +1,11 @@
+This repository contains the following packages:
+Package 1: hydra_one_description
+Package 2: hydra_one_navigation
+
+hydra_one_description and hydra_one_navigation packages have been tested on both ROS Melodic and ROC Noetic
+
+--------------------------------------------------------------------------------
+
 # Package 1: hydra_one_description
 ## Package description
 ## How to run this package?
