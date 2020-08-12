@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   dynamic_reconfigure
   eigen_conversions
-  find_object_2d
   geometry_msgs
   hydra_one_description
   image_geometry
@@ -25,14 +24,12 @@ find_package(catkin REQUIRED COMPONENTS
   move_base_msgs
   nav_msgs
   nodelet
-  octomap_msgs
   pcl_conversions
   pcl_ros
   pluginlib
   roscpp
   rosgraph_msgs
   rospy
-  rtabmap_ros
   rviz
   sensor_msgs
   std_msgs
@@ -103,7 +100,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs#   move_base_msgs#   nav_msgs#   octomap_msgs#   rosgraph_msgs#   sensor_msgs#   std_msgs#   stereo_msgs#   visualization_msgs
+#   geometry_msgs#   move_base_msgs#   nav_msgs#   rosgraph_msgs#   sensor_msgs#   std_msgs#   stereo_msgs#   visualization_msgs
 # )
 
 ################################################
@@ -138,7 +135,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES hydra_one_navigation
-#  CATKIN_DEPENDS class_loader costmap_2d cv_bridge dynamic_reconfigure eigen_conversions find_object_2d geometry_msgs hydra_one_description image_geometry image_transport laser_geometry message_filters message_generation move_base move_base_msgs nav_msgs nodelet octomap_msgs pcl_conversions pcl_ros pluginlib roscpp rosgraph_msgs rospy rtabmap_ros rviz sensor_msgs std_msgs std_srvs stereo_msgs tf tf2_ros tf_conversions visualization_msgs
+#  CATKIN_DEPENDS class_loader costmap_2d cv_bridge dynamic_reconfigure eigen_conversions geometry_msgs hydra_one_description image_geometry image_transport laser_geometry message_filters message_generation move_base move_base_msgs nav_msgs nodelet pcl_conversions pcl_ros pluginlib roscpp rosgraph_msgs rospy rviz sensor_msgs std_msgs std_srvs stereo_msgs tf tf2_ros tf_conversions visualization_msgs
 #  DEPENDS system_lib
 )
 
