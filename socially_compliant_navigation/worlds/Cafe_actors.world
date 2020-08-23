@@ -88,10 +88,10 @@
     </include>
 
     <model name="Conv_SubA_model">
-      <pose>3 5 0.2  0 0 0</pose>
-      <static>false</static>
+      <static>true</static>
       <link name="body">
         <visual name="visual">
+        <pose>3 5 0.2  0 0 0</pose>
           <geometry> 
           <mesh>
             <scale>0.1 0.1 0.1</scale>
