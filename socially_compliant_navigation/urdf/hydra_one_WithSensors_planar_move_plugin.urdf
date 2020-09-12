@@ -401,7 +401,7 @@
       </plugin>
       <always_on>1</always_on>
       <update_rate>40</update_rate>
-      <visualize>1</visualize>
+      <visualize>0</visualize>
     </sensor>
   </gazebo>
 
