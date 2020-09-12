@@ -39,7 +39,6 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_ros
   tf_conversions
   visualization_msgs
-  gmapping
   map_server
 )
 
