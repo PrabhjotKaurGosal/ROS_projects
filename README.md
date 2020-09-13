@@ -27,6 +27,6 @@ hydra_one_description and hydra_one_navigation packages have been tested on both
 ##### $ catkin_make
 ##### $ source devel/setup.bash
 ##### $ cd src/hydra_one_navigation/launch
-##### $ roslaunch gmapping_launch.launch
+##### $ roslaunch navigation_main.launch
 
 # References
